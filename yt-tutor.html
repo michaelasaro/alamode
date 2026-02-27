@@ -17,21 +17,23 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Michael Asaro</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#work" class="active">Work</a>
-        <a href="index.html#about">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="mailto:michael@alamode.io">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work" class="active" aria-current="page">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <main class="case-study">
+  <main id="main-content" class="case-study">
 
     <!-- Summary Bar -->
     <header class="cs-header">
@@ -56,9 +58,9 @@
         </div>
       </div>
       <div class="cs-header-links">
-        <a href="https://yt-tutor.up.railway.app/" class="cs-live-link" target="_blank" rel="noopener">Try the App →</a>
+        <a href="https://yt-tutor.up.railway.app/" class="cs-live-link" target="_blank" rel="noopener">Try the App →<span class="sr-only"> (opens in new tab)</span></a>
         <a href="https://github.com/michaelasaro/YT-Tutor" class="cs-live-link" target="_blank" rel="noopener">GitHub
-          →</a>
+          →<span class="sr-only"> (opens in new tab)</span></a>
       </div>
     </header>
 
@@ -138,13 +140,13 @@
     </section>
 
     <!-- Prev / Next -->
-    <nav class="cs-pagination">
+    <nav class="cs-pagination" aria-label="Case study pagination">
       <a href="nsf-cx-research.html" class="cs-pagination-link">
         <span class="cs-pagination-label">Previous</span>
         <span class="cs-pagination-title">← NSF Customer Experience</span>
       </a>
       <a href="index.html#work" class="cs-back-link">Back to All Work</a>
-      <div class="cs-pagination-link"></div>
+      <div class="cs-pagination-link" aria-hidden="true"></div>
     </nav>
 
   </main>

@@ -17,21 +17,23 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Michael Asaro</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#work" class="active">Work</a>
-        <a href="index.html#about">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="mailto:michael@alamode.io">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work" class="active" aria-current="page">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <main class="case-study">
+  <main id="main-content" class="case-study">
 
     <!-- Summary Bar -->
     <header class="cs-header">
@@ -57,7 +59,7 @@
         </div>
       </div>
       <a href="https://michaelasaro.github.io/civic-guide/" class="cs-live-link" target="_blank" rel="noopener">View the
-        Live Project →</a>
+        Live Project →<span class="sr-only"> (opens in new tab)</span></a>
     </header>
 
     <!-- Hero Image -->
@@ -145,8 +147,8 @@
     </section>
 
     <!-- Prev / Next -->
-    <nav class="cs-pagination">
-      <div class="cs-pagination-link"></div>
+    <nav class="cs-pagination" aria-label="Case study pagination">
+      <div class="cs-pagination-link" aria-hidden="true"></div>
       <a href="index.html#work" class="cs-back-link">Back to All Work</a>
       <a href="claribel-chatbot.html" class="cs-pagination-link cs-pagination-link--next">
         <span class="cs-pagination-label">Next</span>

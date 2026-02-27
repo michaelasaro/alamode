@@ -5,10 +5,10 @@
   /* Colors — derived from old Squarespace palette */
   --color-bg: #edf7fd;
   --color-surface: #ffffff;
-  --color-accent: #7abac4;
-  --color-accent-hover: #5a9da8;
+  --color-accent: #337c89;
+  --color-accent-hover: #2b6d78;
   --color-text: #2c2c2c;
-  --color-text-muted: #6b7280;
+  --color-text-muted: #5f6672;
   --color-border: #c8dce2;
   --color-tag-bg: #e3eff2;
   --color-hero-overlay: rgba(20, 30, 35, 0.55);
@@ -73,6 +73,57 @@ a:hover {
 
 
 /* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-text);
+  color: var(--color-surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 200;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: var(--color-surface);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================
    NAVIGATION
    ============================================ */
 .site-nav {
@@ -112,6 +163,7 @@ a:hover {
 .nav-links {
   display: flex;
   gap: var(--space-md);
+  list-style: none;
 }
 
 .nav-links a {
@@ -511,6 +563,7 @@ a:hover {
   }
 
   .site-nav,
+  .skip-link,
   .print-btn,
   .no-print {
     display: none !important;
@@ -626,7 +679,7 @@ a:hover {
 /* ============================================
    RESPONSIVE
    ============================================ */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .site-nav {
     height: auto;
   }
@@ -652,6 +705,7 @@ a:hover {
 
   .nav-links a {
     font-size: 0.75rem;
+    padding: 0.5rem 0.15rem;
   }
 
   html {
@@ -685,7 +739,11 @@ a:hover {
 
   .about-links {
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
+  }
+
+  .about-links a {
+    padding: 0.5rem 0;
   }
 
   .resume-page {

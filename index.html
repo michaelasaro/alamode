@@ -12,17 +12,19 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">Michael Asaro</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#work" class="active">Work</a>
-        <a href="#about">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="mailto:michael@alamode.io">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" data-section="home">Home</a></li>
+        <li><a href="#work" data-section="work">Work</a></li>
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -34,6 +36,8 @@
       <p class="hero-subtitle">UX Design Systems Architect specializing in complex enterprise applications, information architecture, and human-centered design for federal and civic technology.</p>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- Work Section -->
   <section id="work" class="work-section">
@@ -51,7 +55,7 @@
           <p class="card-description">Restructured the federal USWDS design system from 8 sections to 4, organized around designer and developer workflows. Built a 107-page documentation and component library site with interactive code examples.</p>
           <div class="card-links">
             <a href="civic-design-system.html" class="card-link">View Case Study →</a>
-            <a href="https://michaelasaro.github.io/civic-guide/" class="card-link" target="_blank" rel="noopener">View the Design System →</a>
+            <a href="https://michaelasaro.github.io/civic-guide/" class="card-link" target="_blank" rel="noopener">View the Design System →<span class="sr-only"> (opens in new tab)</span></a>
           </div>
         </div>
       </article>
@@ -93,8 +97,8 @@
           <p class="card-description">An educational app that prepares YouTube video context for AI-powered tutoring sessions. Built with Flask and deployed to Railway. Designed and developed as a portfolio piece targeting EdTech opportunities.</p>
           <div class="card-links">
             <a href="yt-tutor.html" class="card-link">View Case Study →</a>
-            <a href="https://yt-tutor.up.railway.app/" class="card-link" target="_blank" rel="noopener">Try the App →</a>
-            <a href="https://github.com/michaelasaro/YT-Tutor" class="card-link" target="_blank" rel="noopener">View on GitHub →</a>
+            <a href="https://yt-tutor.up.railway.app/" class="card-link" target="_blank" rel="noopener">Try the App →<span class="sr-only"> (opens in new tab)</span></a>
+            <a href="https://github.com/michaelasaro/YT-Tutor" class="card-link" target="_blank" rel="noopener">View on GitHub →<span class="sr-only"> (opens in new tab)</span></a>
           </div>
         </div>
       </article>
@@ -112,18 +116,54 @@
         <p>I help organizations build consistent, accessible, and scalable design languages that serve the people actually building with them.</p>
       </div>
       <div class="about-links">
-        <a href="https://www.linkedin.com/in/alamode" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/michaelasaro" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/alamode" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+        <a href="https://github.com/michaelasaro" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span></a>
         <a href="mailto:michael@alamode.io">michael@alamode.io</a>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="site-footer">
     <p>Located near Washington, DC</p>
-    <p>Photo by <a href="https://unsplash.com/@grakozy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Greg Rakozy</a> on <a href="https://unsplash.com/photos/silhouette-photography-of-person-oMpAz-DN-9I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></p>
+    <p>Photo by <a href="https://unsplash.com/@grakozy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Greg Rakozy<span class="sr-only"> (opens in new tab)</span></a> on <a href="https://unsplash.com/photos/silhouette-photography-of-person-oMpAz-DN-9I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash<span class="sr-only"> (opens in new tab)</span></a></p>
   </footer>
+
+  <script>
+    (function () {
+      const sections = [
+        { id: 'about', el: document.getElementById('about') },
+        { id: 'work', el: document.getElementById('work') }
+      ];
+      const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+      const offset = 120;
+
+      function update() {
+        let active = 'home';
+        const atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 50);
+        if (atBottom) {
+          active = 'about';
+        } else {
+          for (const s of sections) {
+            if (s.el && s.el.getBoundingClientRect().top <= offset) {
+              active = s.id;
+            }
+          }
+        }
+        navLinks.forEach(link => {
+          const isActive = link.dataset.section === active;
+          link.classList.toggle('active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 
 </body>
 </html>

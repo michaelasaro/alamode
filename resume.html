@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael_Asaro_Resume</title>
+  <title>Resume — Michael Asaro</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,26 +12,28 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">Michael Asaro</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#work">Work</a>
-        <a href="index.html#about">About</a>
-        <a href="resume.html" class="active">Resume</a>
-        <a href="mailto:michael@alamode.io">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.html" class="active" aria-current="page">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- Resume -->
-  <main class="resume-page">
+  <main id="main-content" class="resume-page">
     <div class="resume-header">
       <div class="resume-name-row">
         <h1 class="resume-name">Michael Asaro</h1>
-        <button class="print-btn" onclick="window.print()">Save as PDF</button>
+        <button class="print-btn" onclick="var t=document.title;document.title='Michael_Asaro_Resume';window.print();document.title=t;">Save as PDF</button>
       </div>
       <p class="resume-contact">
         Leesburg, VA &nbsp;&bull;&nbsp;
@@ -40,7 +42,7 @@
       </p>
       <p class="resume-contact">
         <a href="https://alamode.io">alamode.io</a> &nbsp;&bull;&nbsp;
-        <a href="https://linkedin.com/in/alamode" target="_blank" rel="noopener">linkedin.com/in/alamode</a>
+        <a href="https://linkedin.com/in/alamode" target="_blank" rel="noopener">linkedin.com/in/alamode<span class="sr-only"> (opens in new tab)</span></a>
       </p>
     </div>
 
@@ -85,7 +87,7 @@
           <li>Restructured the 8-section federal design system into 4 sections based on user workflows</li>
           <li>Built a 100+ page documentation site in HTML, CSS/SCSS, and JS with interactive code examples</li>
           <li>Consolidated design tokens into single commented reference for faster team onboarding</li>
-          <li>Released the design system as open source: <a href="https://michaelasaro.github.io/civic-guide/" target="_blank" rel="noopener">michaelasaro.github.io/civic-guide</a></li>
+          <li>Released the design system as open source: <a href="https://michaelasaro.github.io/civic-guide/" target="_blank" rel="noopener">michaelasaro.github.io/civic-guide<span class="sr-only"> (opens in new tab)</span></a></li>
           <li>Designed a conversational UI for internal GenAI in Figma: onboarding, help, feedback, citations, errors</li>
           <li>Wrote the USDA 508 WCAG 2.2 AA guidelines; published it in the Design System and on Confluence</li>
           <li>Re-established cross-agency UX working group across four USDA divisions</li>

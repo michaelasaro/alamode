@@ -17,21 +17,23 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Michael Asaro</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#work" class="active">Work</a>
-        <a href="index.html#about">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="mailto:michael@alamode.io">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work" class="active" aria-current="page">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <main class="case-study">
+  <main id="main-content" class="case-study">
 
     <!-- Summary Bar -->
     <header class="cs-header">
@@ -53,7 +55,7 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Tools</span>
-          <span class="cs-meta-value">Lucid Spark, Excel, Zoom</span>
+          <span class="cs-meta-value">Lucid Spark/Chart, Excel, AirTable, Figma</span>
         </div>
       </div>
     </header>
@@ -70,7 +72,7 @@
       <div class="cs-body">
         <p>In December 2021, <a
             href="https://bidenwhitehouse.archives.gov/briefing-room/presidential-actions/2021/12/13/executive-order-on-transforming-federal-customer-experience-and-service-delivery-to-rebuild-trust-in-government/"
-            target="_blank" rel="noopener">Executive Order 14058</a> directed federal agencies to transform customer
+            target="_blank" rel="noopener">Executive Order 14058<span class="sr-only"> (opens in new tab)</span></a> directed federal agencies to transform customer
           experience and rebuild public trust. The EO framed every interaction between the government and the public as
           an opportunity to reduce "time taxes" — the cumulative burden of navigating fragmented, compliance-oriented
           processes.</p>
@@ -125,22 +127,27 @@
           day, including stages, processes, user steps, touchpoints, and handoffs across multiple DAS branches.
         </figcaption>
       </figure>
+      <p>Over four task orders, the work progressed from discovery research through framework development to operational
+        scorecards — the 5 CX criteria we defined became the measurement structure used to evaluate individual services
+        quarterly, tracking metrics, customer sentiment, and dependencies across DAS branches. I departed during the fourth
+        task order in April 2024.</p>
     </section>
 
     <!-- Reflection -->
     <section class="cs-section">
       <h2 class="cs-section-heading">Reflection</h2>
       <div class="cs-body">
-        <p>This project taught me how organizational research differs from product research. In product work, you're
-          trying to understand how someone uses a tool. In organizational CX, you're trying to understand how a system
-          sees itself — and the gap between that self-image and how it's experienced. That gap between effort and
-          perceived value was the real finding, and no amount of service cataloging would have surfaced it without the
-          interview work underneath.</p>
+        <p>This project taught me how organizational research differs from product research. In product work, you're trying to
+          understand how someone uses a tool. In organizational CX, you're trying to understand how a system sees itself — and
+          the gap between that self-image and how it's experienced. Across interviews, we kept finding teams that genuinely
+          cared about service but had no way to know whether that effort was landing. That gap between effort and perceived
+          value was the real finding, and no amount of service cataloging would have surfaced it without the interview work
+          underneath.</p>
       </div>
     </section>
 
     <!-- Prev / Next -->
-    <nav class="cs-pagination">
+    <nav class="cs-pagination" aria-label="Case study pagination">
       <a href="claribel-chatbot.html" class="cs-pagination-link">
         <span class="cs-pagination-label">Previous</span>
         <span class="cs-pagination-title">← USDA Claribel</span>

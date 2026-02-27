@@ -220,7 +220,7 @@
 /* ============================================
    RESPONSIVE
    ============================================ */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .cs-title {
     font-size: 1.8rem;
   }
@@ -232,9 +232,7 @@
   .cs-artifact-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 768px) {
   .case-study {
     padding-top: calc(88px + var(--space-xl));
   }
