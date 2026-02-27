@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Design System — Michael Asaro</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michael Asaro</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#work" class="active">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="mailto:michael@alamode.io">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="case-study">
+
+    <!-- Summary Bar -->
+    <header class="cs-header">
+      <h1 class="cs-title">Civic Design System</h1>
+      <p class="cs-subtitle">USDA FPAC — Design System Modernization</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-value">UX Architect</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-value">Nov 2024 – Jan 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Methods</span>
+          <span class="cs-meta-value">Information Architecture, Design Systems, USWDS Modernization, Accessibility (WCAG
+            2.2 AA), Stakeholder Engagement</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Tools</span>
+          <span class="cs-meta-value">HTML, CSS/SCSS, JavaScript, Node.js, Gulp, Git/GitHub, Confluence</span>
+        </div>
+      </div>
+      <a href="https://michaelasaro.github.io/civic-guide/" class="cs-live-link" target="_blank" rel="noopener">View the
+        Live Project →</a>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="cs-hero-image">
+      <img src="civic-design-system/thumbnail.png" alt="Screenshot of the Civic Design System documentation site">
+    </div>
+
+    <!-- The Problem -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Problem</h2>
+      <div class="cs-body">
+        <p>USDA's Farm Production and Conservation mission area was running on USWDS 1.x with fragmented design
+          practices across multiple agencies. Development teams had no shared design language, no centralized
+          documentation, and no consistent accessibility standards. The existing federal design system documentation was
+          structured around system architecture rather than the needs of the developers and designers building with it.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Approach -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Approach</h2>
+      <div class="cs-body">
+        <p>I led the modernization of the FPAC Design System, upgrading from USWDS 1.x to 3.x and coordinating with
+          engineers to establish the build and distribution pipeline.</p>
+        <p>The biggest design decision was restructuring the documentation's information architecture. The USWDS site
+          organizes its guidance across 8 top-level sections that reflect the system's internal architecture:
+          Components, Patterns, Templates, Design Tokens, Utilities, and so on. That structure makes sense if you manage
+          the system, but developers trying to implement a component and designers trying to understand what's available
+          shouldn't need to think in those terms. I consolidated the site into 4 sections based on user workflows: a
+          Style Guide (tokens + utilities), a Component Library (components + patterns + templates), Guidelines
+          (accessibility + process), and a Home page for orientation.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="civic-design-system/uswds-vs-civic-nav.png"
+          alt="Side-by-side comparison of USWDS navigation versus Civic navigation">
+        <figcaption>USWDS organizes documentation around system architecture (top). Civic reorganizes it around
+          designer and developer workflows (bottom).</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>I built the full 107-page documentation site in HTML, CSS/SCSS, and JavaScript. The Style Guide covers
+          typography, color, layout, and visual style utilities with interactive examples. The Component Library
+          documents approximately 60 components with implementation-focused content — I stripped out the system-level
+          configuration details that were creating noise for the people doing the actual building. I also created
+          comparison tables mapping the legacy FSA Design System (1.x) to the new FPAC Design System (3.x), so teams
+          could see exactly what was changing and where their existing implementations needed to update.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="civic-design-system/component-page.png"
+          alt="Screenshot of a component page with interactive component examples">
+        <figcaption>Each component page includes interactive component examples and the ability to copy the code for implementation.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>Beyond the documentation, I updated the agency's Section 508 accessibility guidance to WCAG 2.2 AA,
+          publishing it in both the Design System and on Confluence. I re-established the cross-agency FPAC UX Sync
+          group, engaging design and development teams across NRCS, FSA, Farmers.gov, and RMA to drive adoption. I also
+          built the case for enterprise Figma adoption across FPAC, researching costs and documenting use cases across
+          mission areas.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="civic-design-system/style-guide.png"
+          alt="Screenshot of style guide page showing design tokens and utilities">
+        <figcaption>Design tokens and utilities consolidated into a single browsable style guide, organized for quick
+          developer reference.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Reflection -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">Reflection</h2>
+      <div class="cs-body">
+        <p>A design system's documentation is the product for most of its users. You can build the most elegant token
+          system in the world, but if a developer can't find what they need in under 30 seconds, it doesn't matter. I
+          also learned that adoption can't be driven from one direction alone — it requires working bottom-up through
+          developers, top-down through leadership, and middle-out through technical architects simultaneously.</p>
+        <p>After the contract ended, I forked the design system as the Civic Design System — an open-source resource for
+          federal agencies and civic organizations to use as a starting point for their own USWDS-based design systems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Prev / Next -->
+    <nav class="cs-pagination">
+      <div class="cs-pagination-link"></div>
+      <a href="index.html#work" class="cs-back-link">Back to All Work</a>
+      <a href="claribel-chatbot.html" class="cs-pagination-link cs-pagination-link--next">
+        <span class="cs-pagination-label">Next</span>
+        <span class="cs-pagination-title">USDA Claribel →</span>
+      </a>
+    </nav>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>Located near Washington, DC</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USDA Claribel — Michael Asaro</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michael Asaro</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#work" class="active">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="mailto:michael@alamode.io">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="case-study">
+
+    <!-- Summary Bar -->
+    <header class="cs-header">
+      <h1 class="cs-title">Claribel — USDA GenAI Chatbot</h1>
+      <p class="cs-subtitle">USDA Farm Loan Programs — Conversational AI Interface Design</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-value">UX Architect</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-value">May – Aug 2025</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Methods</span>
+          <span class="cs-meta-value">Stakeholder Interviews, Competitive Analysis, Iterative Prototyping, Developer
+            Handoff</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Tools</span>
+          <span class="cs-meta-value">Figma</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="cs-hero-image">
+      <img src="claribel-chatbot/thumbnail.png" alt="Figma mockups of the USDA Claribel chatbot interface">
+    </div>
+
+    <!-- The Problem -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Problem</h2>
+      <div class="cs-body">
+        <p>USDA Farm Loan Programs staff navigate 2,000–3,000 pages of policy handbooks to answer questions from farmers
+          applying for loans. New customer service representatives relied on Ctrl+F or asking a more experienced
+          colleague. Seasoned loan officials needed deeper cross-referencing across multiple policy areas. Leadership
+          wanted to deploy a GenAI chatbot that could surface policy answers with citations to source material — but the
+          team had no UI design and no UX perspective on how to make AI-generated responses trustworthy and actionable
+          in a government context.</p>
+      </div>
+    </section>
+
+    <!-- The Approach -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Approach</h2>
+      <div class="cs-body">
+        <p>I started by interviewing the product owner to identify the three core user types: customer service reps
+          looking for quick answers while on the phone with a farmer, subject matter expert loan officials doing deep
+          policy research across multiple handbooks, and executives who needed a mobile-optimized view to look up
+          information while in meetings. Each persona had fundamentally different needs — the CSR needs a short,
+          actionable answer fast; the SME needs comprehensive source material and cross-references; the executive needs
+          the same information delivered cleanly on a phone screen.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="claribel-chatbot/two-screen-overview.png"
+          alt="Two screens showing a chat in progress with citations and conversation history">
+        <figcaption>The core interface: two screens showing a chat in progress with citations and conversation history.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>The stakeholder's three priorities were clear: access to ground truth source documents was non-negotiable,
+          the system needed to help users construct accurate prompts, and there had to be a structured feedback
+          mechanism so the team could improve the AI's responses over time.</p>
+        <p>I designed a personality system that adapted the chatbot's behavior to the user's context. A "Customer
+          Service Coach" mode delivers short answers with suggestions for phone or email follow-up. A "Technical
+          Research Assistant" mode provides longer, more detailed responses with additional references and diagrams.
+          Users could also filter which policy documents the AI draws from — critical because the AI model was getting
+          confused between loan making and loan servicing questions when the full corpus was included.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="claribel-chatbot/personality-settings.png"
+          alt="Settings screen showing how to enable the Technical Research Assistant mode and filter which policy documents the AI references">
+        <figcaption>Users can enable the Technical Research Assistant mode and filter which policy documents the AI references —
+          solving a prompt accuracy problem identified during stakeholder interviews.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>For the citation experience, I designed a reference system where numbered citations in the response link to a
+          split-screen document viewer showing the highlighted source passage alongside the AI's answer. This was the
+          product owner's highest priority — staff needed to verify AI responses against the actual handbook language
+          and cite those sources in official correspondence like adverse decision letters.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="claribel-chatbot/citations.png"
+          alt="Split-screen showing chat on bottom and source document on top with highlighted passage">
+        <figcaption>Citations link to a reference viewer showing the exact source passage — the most
+          critical trust-building feature for government use.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>I also designed the feedback mechanism with structured categories (factually correct/incorrect, contextually
+          relevant/irrelevant, easy/difficult to understand, practical/impractical) plus an optional free-text field,
+          giving the development team actionable data to improve the model.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="claribel-chatbot/feedback-form.png"
+          alt="Feedback form with thumbs up/down and structured quality dimension categories">
+        <figcaption>Structured feedback captures specific quality dimensions rather than just thumbs up/down, giving the
+          team actionable improvement data.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>Since the development team didn't have Figma access, I delivered fully dimensioned specs — redlined
+          screenshots with spacing, font sizes, weights, and corner radii annotated — so engineers could implement
+          without ambiguity.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="claribel-chatbot/redlined-specs.png"
+          alt="Redlined Figma screen showing dimension annotations, font specs, and spacing callouts">
+        <figcaption>Developer handoff specs with full dimensions, created as annotated screenshots because the
+          engineering team didn't have Figma licenses.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Reflection -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">Reflection</h2>
+      <div class="cs-body">
+        <p>Designing for AI-generated content requires different trust patterns than traditional interfaces. In a
+          government context, the AI's answer isn't the product — the verifiable source citation is. Everything in the
+          UI had to reinforce that the chatbot is a tool for finding information faster, not a replacement for policy
+          expertise. The personality and filtering systems were my solution to a prompt engineering problem that was
+          showing up as a UX problem — the AI was giving confused answers not because the model was bad, but because
+          users had no way to scope their questions.</p>
+      </div>
+    </section>
+
+    <!-- Prev / Next -->
+    <nav class="cs-pagination">
+      <a href="civic-design-system.html" class="cs-pagination-link">
+        <span class="cs-pagination-label">Previous</span>
+        <span class="cs-pagination-title">← Civic Design System</span>
+      </a>
+      <a href="index.html#work" class="cs-back-link">Back to All Work</a>
+      <a href="nsf-cx-research.html" class="cs-pagination-link cs-pagination-link--next">
+        <span class="cs-pagination-label">Next</span>
+        <span class="cs-pagination-title">NSF Customer Experience →</span>
+      </a>
+    </nav>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>Located near Washington, DC</p>
+  </footer>
+
+</body>
+
+</html>

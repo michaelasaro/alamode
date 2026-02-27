@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT-Tutor — Michael Asaro</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-study.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michael Asaro</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#work" class="active">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="mailto:michael@alamode.io">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="case-study">
+
+    <!-- Summary Bar -->
+    <header class="cs-header">
+      <h1 class="cs-title">YT-Tutor</h1>
+      <p class="cs-subtitle">EdTech Product — AI-Augmented Video Learning Tool</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-value">Designer &amp; Developer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-value">2025 – Present</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Methods</span>
+          <span class="cs-meta-value">Product Design, Usability Testing, Iterative Development</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Tools</span>
+          <span class="cs-meta-value">Flask, Python, yt-dlp, HTML/CSS/JavaScript, Railway</span>
+        </div>
+      </div>
+      <div class="cs-header-links">
+        <a href="https://yt-tutor.up.railway.app/" class="cs-live-link" target="_blank" rel="noopener">Try the App →</a>
+        <a href="https://github.com/michaelasaro/YT-Tutor" class="cs-live-link" target="_blank" rel="noopener">GitHub
+          →</a>
+      </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="cs-hero-image">
+      <img src="yt-tutor/thumbnail.png" alt="Screenshot of the YT-Tutor educational application">
+    </div>
+
+    <!-- The Problem -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Problem</h2>
+      <div class="cs-body">
+        <p>YouTube is one of the richest educational resources available, but there's no easy way to bring a video's
+          content into an AI conversation. If you want to discuss a lecture with Claude or ChatGPT, you have to manually
+          copy the URL, find the transcript, grab the metadata, and paste it all together. That friction means most
+          people just don't do it — they watch passively instead of engaging with the material.</p>
+      </div>
+    </section>
+
+    <!-- The Approach -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Approach</h2>
+      <div class="cs-body">
+        <p>I designed and built YT-Tutor as a context preparation layer for AI-powered tutoring. The user pastes a
+          YouTube URL, the app extracts the video's transcript, metadata, timestamps, and description, then packages it
+          as a structured initialization message the user copies into their AI of choice. It's AI-agnostic by design —
+          the user brings their own AI, which keeps the tool free and avoids locking anyone into a single platform.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="yt-tutor/version-1.png"
+          alt="Screenshot of the initial red version showing URL bar, checkboxes, and copy button">
+        <figcaption>The initial design assumed users already understood the "bring your own AI" workflow.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>I deployed the first version to Railway and ran a usability test with a user who was comfortable with YouTube
+          but had no prior experience with AI tools. The test revealed a fundamental onboarding problem: the user opened
+          the app and had no idea what to do. They didn't understand that YT-Tutor was a preparation tool, not the AI
+          itself. They couldn't identify the workflow steps or figure out what to do with the initialization message
+          once it was generated.</p>
+        <p>The core issue wasn't a UI polish problem — it was a missing mental model. The app assumed a workflow that
+          didn't exist in the user's head.</p>
+      </div>
+
+      <figure class="cs-figure">
+        <img src="yt-tutor/version-2.png"
+          alt="Screenshot of the redesigned yellow version with numbered steps, Open YouTube button, and AI selector">
+        <figcaption>The redesigned onboarding walks users through the workflow step by step: find a video, choose your
+          context, pick your AI, and copy the message.</figcaption>
+      </figure>
+
+      <div class="cs-body">
+        <p>I redesigned the onboarding into four explicit numbered steps: find a video and paste its URL, choose what
+          context to include in the initialization message, optionally open your preferred AI in a new tab, and copy the
+          message. I added an "Open YouTube" button for users who hadn't found a video yet, and radio buttons for
+          selecting an AI (Claude, ChatGPT, Gemini, Copilot) so the app could open it alongside — turning a two-window
+          juggling act into a guided flow.</p>
+        <p>The app also accounts for different screen setups. On a large screen, users can place YT-Tutor side-by-side with
+          their AI and use the 'Copy context' button to pass timestamped video context mid-conversation. On mobile or
+          single-screen setups, a built-in notebook lets users jot timestamped notes and questions while watching, then export
+          them as markdown. A 'How are you working?' question in the setup flow guides users to the right tool for their
+          situation.</p>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">Reflection</h2>
+      <div class="cs-body">
+        <p>YT-Tutor is about a week old and still a work in progress, but it points toward what I think AI's role in education
+          should be. Rather than students using AI to generate answers, the opportunity is to help them more deeply engage with
+          content they're already intrinsically motivated to watch. A student who chooses a YouTube lecture on quantum mechanics
+          is already curious — the right tool gives them a way to interrogate that content, ask follow-up questions, and build
+          understanding at their own pace.</p>
+      </div>
+    </section>
+
+    <!-- Prev / Next -->
+    <nav class="cs-pagination">
+      <a href="nsf-cx-research.html" class="cs-pagination-link">
+        <span class="cs-pagination-label">Previous</span>
+        <span class="cs-pagination-title">← NSF Customer Experience</span>
+      </a>
+      <a href="index.html#work" class="cs-back-link">Back to All Work</a>
+      <div class="cs-pagination-link"></div>
+    </nav>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>Located near Washington, DC</p>
+  </footer>
+
+</body>
+
+</html>
