@@ -232,10 +232,10 @@
   .cs-artifact-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .cs-footer {
-    flex-direction: column-reverse;
-    gap: var(--space-sm);
-    align-items: flex-start;
+@media (max-width: 768px) {
+  .case-study {
+    padding-top: calc(88px + var(--space-xl));
   }
 }

@@ -627,8 +627,40 @@ a:hover {
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+  .site-nav {
+    height: auto;
+  }
+
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    padding: 0.4rem var(--space-md);
+  }
+
+  .nav-logo {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: var(--space-sm);
+    padding-bottom: 0.35rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  html {
+    scroll-padding-top: 88px;
+  }
+
   .hero {
     height: 340px;
+    margin-top: 88px;
   }
 
   .hero-title {
@@ -637,6 +669,10 @@ a:hover {
 
   .hero-subtitle {
     font-size: 0.95rem;
+  }
+
+  .hero-content {
+    padding: var(--space-lg) var(--space-sm);
   }
 
   .card-grid {
@@ -651,18 +687,8 @@ a:hover {
     flex-direction: column;
     gap: var(--space-xs);
   }
-}
 
-@media (max-width: 480px) {
-  .nav-links {
-    gap: var(--space-sm);
-  }
-
-  .nav-links a {
-    font-size: 0.75rem;
-  }
-
-  .hero-content {
-    padding: var(--space-lg) var(--space-sm);
+  .resume-page {
+    padding-top: calc(88px + var(--space-xl));
   }
 }
