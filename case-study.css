@@ -60,6 +60,12 @@
   line-height: 1.4;
 }
 
+.cs-header-links {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
 .cs-live-link {
   display: inline-block;
   font-size: 0.9rem;
@@ -125,6 +131,19 @@
 
 .cs-body p:last-child {
   margin-bottom: 0;
+}
+
+.cs-body ul {
+  list-style: disc;
+  padding-left: 1.5em;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-body li {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 0.35em;
 }
 
 

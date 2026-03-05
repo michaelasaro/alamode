@@ -265,11 +265,13 @@ button:focus-visible {
 }
 
 .project-card {
+  position: relative;
   background: var(--color-surface);
   border-radius: var(--border-radius);
   overflow: hidden;
   border: 1px solid var(--color-border);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -325,6 +327,8 @@ button:focus-visible {
 }
 
 .card-link {
+  position: relative;
+  z-index: 1;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-accent-hover);

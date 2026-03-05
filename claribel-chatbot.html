@@ -61,7 +61,7 @@
       <div class="cs-meta">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-value">UX Architect</span>
+          <span class="cs-meta-value">UX Architect (sole designer)</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
@@ -84,61 +84,77 @@
       <img src="claribel-chatbot/thumbnail.png" alt="Figma mockups of the USDA Claribel chatbot interface">
     </div>
 
-    <!-- The Problem -->
+    <!-- The Situation -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Problem</h2>
+      <h2 class="cs-section-heading">The Situation</h2>
       <div class="cs-body">
-        <p>USDA Farm Loan Programs staff navigate 2,000–3,000 pages of policy handbooks to answer questions from farmers
-          applying for loans. New customer service representatives relied on Ctrl+F or asking a more experienced
-          colleague. Seasoned loan officials needed deeper cross-referencing across multiple policy areas. Leadership
-          wanted to deploy a GenAI chatbot that could surface policy answers with citations to source material — but the
-          team had no UI design and no UX perspective on how to make AI-generated responses trustworthy and actionable
-          in a government context.</p>
+        <p>A USDA development team had a directive from leadership: build an AI chatbot that could help Farm Loan Programs
+          staff navigate 2,000–3,000 pages of policy handbooks. Developers were standing by, but there was no designer on
+          the team, no product definition, and no clarity on what the chatbot should actually do. Someone mentioned my name
+          because I wasn't tied to a specific product, and the ask was straightforward: we need to know what to build.</p>
       </div>
     </section>
 
-    <!-- The Approach -->
+    <!-- The Diagnosis -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Approach</h2>
+      <h2 class="cs-section-heading">The Diagnosis</h2>
       <div class="cs-body">
-        <p>I started by interviewing the product owner to identify the three core user types: customer service reps
-          looking for quick answers while on the phone with a farmer, subject matter expert loan officials doing deep
-          policy research across multiple handbooks, and executives who needed a mobile-optimized view to look up
-          information while in meetings. Each persona had fundamentally different needs — the CSR needs a short,
-          actionable answer fast; the SME needs comprehensive source material and cross-references; the executive needs
-          the same information delivered cleanly on a phone screen.</p>
+        <p>The first thing I needed to understand was who would use this and what they actually needed. Over 2–3 sessions
+          with the product owner, three distinct user archetypes emerged:</p>
+        <ul>
+          <li><strong>Customer service reps</strong> — need a quick answer while on the phone with a farmer</li>
+          <li><strong>Seasoned loan officials</strong> — doing deep cross-referencing across multiple policy areas</li>
+          <li><strong>Senior leadership</strong> — using this on government-issued phones while traveling</li>
+        </ul>
+        <p>Each had fundamentally different needs — speed versus depth versus mobile usability — and a single chatbot interface
+          would have to serve all three.</p>
+        <p>Beyond the users, three product priorities became clear:</p>
+        <ul>
+          <li><strong>Ground-truth source access</strong> — non-negotiable, since staff need to cite handbook language in official correspondence like adverse decision letters</li>
+          <li><strong>Prompt accuracy</strong> — the AI model was getting confused between loan making and loan servicing questions and users needed a way to scope their queries</li>
+          <li><strong>Structured feedback</strong> — so the team could improve the AI's responses over time</li>
+        </ul>
+        <p>I also assessed the AI product landscape — Claude, ChatGPT, Gemini, Adobe's AI assistant — to understand
+          emerging interaction patterns for citation, conversation threading, and document reference. The Adobe AI
+          assistant's split-screen document viewer became a key reference for the citation experience.</p>
+      </div>
+    </section>
+
+    <!-- The Intervention -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Intervention</h2>
+      <div class="cs-body">
+        <p>I designed the complete conversational UI from scratch in Figma, mobile-first to serve the 20% of users — senior
+          leadership — who would be the most demanding power users on the smallest screens.</p>
       </div>
 
       <figure class="cs-figure">
         <img src="claribel-chatbot/two-screen-overview.png"
           alt="Two screens showing a chat in progress with citations and conversation history">
-        <figcaption>The core interface: two screens showing a chat in progress with citations and conversation history.</figcaption>
+        <figcaption>The core mobile interface: chat in progress with inline citations and conversation history.</figcaption>
       </figure>
 
       <div class="cs-body">
-        <p>The stakeholder's three priorities were clear: access to ground truth source documents was non-negotiable,
-          the system needed to help users construct accurate prompts, and there had to be a structured feedback
-          mechanism so the team could improve the AI's responses over time.</p>
-        <p>I designed a personality system that adapted the chatbot's behavior to the user's context. The "Default" mode delivers
-          short answers that can be quickly referenced by a customer-service representative while on the phone with a customer.
-          A "Technical Research Assistant" mode provides longer, more detailed responses with additional references and diagrams -
-          useful for subject matter experts conducting in-depth research. Users could also filter which policy documents the AI
-          draws from — critical because the AI model was getting confused between loan making and loan servicing questions when
-          the full corpus was included.</p>
+        <p><strong>Personality modes</strong> solved the prompt accuracy problem through design rather than prompt engineering.
+          The default mode delivers short, actionable answers — suited for a customer service rep who needs a quick reference
+          while on the phone. A "Technical Research Assistant" mode provides longer, more detailed responses with additional
+          references — useful for subject matter experts conducting in-depth policy research. Users could also filter which
+          policy documents the AI draws from, which was critical because the model was confusing loan making and loan servicing
+          when the full corpus was included.</p>
       </div>
 
       <figure class="cs-figure">
         <img src="claribel-chatbot/personality-settings.png"
           alt="Settings screen showing how to enable the Technical Research Assistant mode and filter which policy documents the AI references">
-        <figcaption>Users can enable the Technical Research Assistant mode and filter which policy documents the AI references —
-          solving a prompt accuracy problem identified during stakeholder interviews.</figcaption>
+        <figcaption>Personality modes and document filters — a UX solution to what was presenting as a prompt
+          engineering problem.</figcaption>
       </figure>
 
       <div class="cs-body">
-        <p>For the citation experience, I designed a reference system where numbered citations in the response link to a
-          split-screen document viewer showing the highlighted source passage alongside the AI's answer. This was the
-          product owner's highest priority — staff needed to verify AI responses against the actual handbook language
-          and cite those sources in official correspondence like adverse decision letters.</p>
+        <p><strong>The citation system</strong> was the product owner's highest priority. In a government context, the AI's
+          answer isn't the product — the verifiable source is. I designed numbered inline citations that link to a split-screen
+          document viewer showing the highlighted source passage alongside the AI's response. Staff could verify answers against
+          actual handbook language before using them in official correspondence.</p>
       </div>
 
       <figure class="cs-figure">
@@ -149,22 +165,30 @@
       </figure>
 
       <div class="cs-body">
-        <p>I also designed the feedback mechanism with structured categories (factually correct/incorrect, contextually
-          relevant/irrelevant, easy/difficult to understand, practical/impractical) plus an optional free-text field,
-          giving the development team actionable data to improve the model.</p>
+        <p><strong>Structured feedback</strong> gave the development team actionable data to improve the model over time.
+          Thumbs up/down triggers a screen with specific quality dimensions — factual accuracy, contextual relevance,
+          comprehensibility, actionability — plus an optional free-text field. This turns every user interaction into a
+          training signal without requiring extra effort.</p>
       </div>
 
       <figure class="cs-figure">
         <img src="claribel-chatbot/feedback-form.png"
           alt="Feedback form with thumbs up/down and structured quality dimension categories">
-        <figcaption>Pressing the thumbs up/down buttons presents the user with a screen to provide structured feedback along specific quality dimensions, giving the
-          team actionable improvement data.</figcaption>
+        <figcaption>Structured feedback along specific quality dimensions, turning user interactions into
+          actionable improvement data for the development team.</figcaption>
       </figure>
 
       <div class="cs-body">
-        <p>Since the development team didn't have Figma access, I delivered fully dimensioned specs — redlined
-          screenshots with spacing, font sizes, weights, and corner radii annotated — so engineers could implement
-          without ambiguity.</p>
+        <p>The full design package also included:</p>
+        <ul>
+          <li><strong>Chat history</strong> — with conversation threading</li>
+          <li><strong>Voice input and text-to-speech output</strong> — for accessibility, particularly for users who would otherwise need screen readers</li>
+          <li><strong>Keyboard shortcuts</strong> — for power users who live on the keyboard</li>
+          <li><strong>Desktop split-screen view</strong> — pairing the chatbot with the source document site</li>
+        </ul>
+        <p>Since the development team
+          didn't have Figma access, I delivered fully dimensioned specs — redlined screenshots with spacing, font sizes,
+          weights, and corner radii annotated — so engineers could implement without ambiguity.</p>
       </div>
 
       <figure class="cs-figure">
@@ -175,16 +199,19 @@
       </figure>
     </section>
 
-    <!-- Reflection -->
+    <!-- What I Learned -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">Reflection</h2>
+      <h2 class="cs-section-heading">What I Learned</h2>
       <div class="cs-body">
-        <p>Designing for AI-generated content requires different trust patterns than traditional interfaces. In a
-          government context, the AI's answer isn't the product — the verifiable source citation is. Everything in the
-          UI had to reinforce that the chatbot is a tool for finding information faster, not a replacement for policy
-          expertise. The personality and filtering systems were my solution to a prompt engineering problem that was
-          showing up as a UX problem — the AI was giving confused answers not because the model was bad, but because
-          users had no way to scope their questions.</p>
+        <p>The personality and filtering systems were my solution to a prompt engineering problem that was showing up as a
+          UX problem — the AI was giving confused answers not because the model was bad, but because users had no way to
+          scope their questions. That reframe — from "fix the AI" to "give users control over the AI's context" — is the
+          kind of diagnostic move that defines this work for me. The technical constraint was real, but the intervention
+          was design.</p>
+        <p>This project also reinforced that designing for AI-generated content requires different trust patterns than
+          traditional interfaces. Everything in the UI had to reinforce that Claribel is a tool for finding information
+          faster, not a replacement for policy expertise. In government, trust isn't assumed — it's built citation by
+          citation.</p>
       </div>
     </section>
 

@@ -61,7 +61,7 @@
       <div class="cs-meta">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-value">UX Architect</span>
+          <span class="cs-meta-value">UX Architect (sole designer)</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
@@ -77,8 +77,10 @@
           <span class="cs-meta-value">HTML, CSS/SCSS, JavaScript, Node.js, Gulp, Git/GitHub, Confluence</span>
         </div>
       </div>
-      <a href="https://michaelasaro.github.io/civic-guide/" class="cs-live-link" target="_blank" rel="noopener">View the
-        Live Project →<span class="sr-only"> (opens in new tab)</span></a>
+      <div class="cs-header-links">
+        <a href="https://michaelasaro.github.io/civic-guide/" class="cs-live-link" target="_blank" rel="noopener">View Design System →<span class="sr-only"> (opens in new tab)</span></a>
+        <a href="https://github.com/michaelasaro/civic-guide" class="cs-live-link" target="_blank" rel="noopener">View GitHub →<span class="sr-only"> (opens in new tab)</span></a>
+      </div>
     </header>
 
     <!-- Hero Image -->
@@ -86,31 +88,51 @@
       <img src="civic-design-system/thumbnail.png" alt="Screenshot of the Civic Design System documentation site">
     </div>
 
-    <!-- The Problem -->
+    <!-- The Situation -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Problem</h2>
+      <h2 class="cs-section-heading">The Situation</h2>
       <div class="cs-body">
-        <p>USDA's Farm Production and Conservation mission area was running on USWDS 1.x with fragmented design
-          practices across multiple agencies. Development teams had no shared design language, no centralized
-          documentation, and no consistent accessibility standards. The existing federal design system documentation was
-          structured around system architecture rather than the needs of the developers and designers building with it.
-        </p>
+        <p>USDA's Farm Production and Conservation mission area includes four agencies — FSA, NRCS, RMA, and
+          Farmers.gov — all of which were supposed to share a design system based on USWDS. In practice, the system was
+          8 years old and each agency had forked it and gone their own direction. RMA hadn't made a single update to their
+          applications in over a decade. There was no shared component library, no higher-level guidance about when to use
+          what patterns, and every app worked differently.</p>
+        <p>Leadership wanted one design system to pull the agencies back together. I recommended starting with an
+          inventory — document which applications existed across agencies, what patterns were in use, and what a
+          migration path would actually look like. But they wanted lines of code, not strategy. The directive was to skip 
+          research and start building.</p>
       </div>
     </section>
 
-    <!-- The Approach -->
+    <!-- The Diagnosis -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Approach</h2>
+      <h2 class="cs-section-heading">The Diagnosis</h2>
       <div class="cs-body">
-        <p>I led the modernization of the FPAC Design System, upgrading from USWDS 1.x to 3.x and coordinating with
-          engineers to establish the build and distribution pipeline.</p>
-        <p>The biggest design decision was restructuring the documentation's information architecture. The USWDS site
-          organizes its guidance across 8 top-level sections that reflect the system's internal architecture:
-          Components, Patterns, Templates, Design Tokens, Utilities, and so on. That structure makes sense if you manage
-          the system, but developers trying to implement a component and designers trying to understand what's available
-          shouldn't need to think in those terms. I consolidated the site into 4 sections based on user workflows: a
-          Style Guide (tokens + utilities), a Component Library (components + patterns + templates), Guidelines
-          (accessibility + process), and a Home page for orientation.</p>
+        <p>A design system's documentation is the product for most of its users. You can build the most elegant token
+          system in the world, but if a developer can't find what they need in under 30 seconds, it doesn't matter.</p>
+        <p>The existing USDA documentation was just a component library and style guide — no guidance about when to use
+          what patterns or how the pieces fit together. My initial plan was to use the USWDS documentation site as a
+          foundation: grab the code from their repo and apply our design tokens. But when I dug in, the USWDS site was
+          built for design system managers, not development teams. It organized guidance across 8 top-level sections
+          reflecting the system's internal architecture — Components, Patterns, Templates, Design Tokens, Utilities, and
+          so on. That structure makes sense if you manage the system, but developers trying to implement a component and
+          designers trying to understand what's available shouldn't need to think in those terms.</p>
+        <p>So I kept what worked and rearchitected the rest.</p>
+      </div>
+    </section>
+
+    <!-- The Intervention -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Intervention</h2>
+      <div class="cs-body">
+        <p>I consolidated the 8 USWDS sections into 4 based on user workflows:</p>
+        <ul>
+          <li><strong>Style Guide</strong> — tokens and utilities for typography, color, layout, and visual style</li>
+          <li><strong>Component Library</strong> — approximately 60 components with implementation-focused content, stripping 
+            out the system-level configuration details that were creating noise</li>
+          <li><strong>Guidelines</strong> — accessibility standards and process documentation</li>
+          <li><strong>Home</strong> — orientation and getting started</li>
+        </ul>
       </div>
 
       <figure class="cs-figure">
@@ -121,12 +143,13 @@
       </figure>
 
       <div class="cs-body">
-        <p>I built the full 107-page documentation site in HTML, CSS/SCSS, and JavaScript. The Style Guide covers
-          typography, color, layout, and visual style utilities with interactive examples. The Component Library
-          documents approximately 60 components with implementation-focused content — I stripped out the system-level
-          configuration details that were creating noise for the people doing the actual building. I also created
-          comparison tables mapping the legacy FSA Design System (1.x) to the new FPAC Design System (3.x), so teams
-          could see exactly what was changing and where their existing implementations needed to update.</p>
+        <p>I built the full 107-page documentation site in HTML, CSS/SCSS, and JavaScript. I created template pages,
+          pulled the core content from each USWDS page, and merged them with our agency-specific guidance. The site uses
+          its own design tokens to demonstrate how every component will look with agency-level customizations — so
+          development teams can see exactly what they're getting before they adopt.</p>
+        <p>I also created comparison tables mapping the legacy FSA Design System (USWDS 1.x) to the new FPAC Design
+          System (USWDS 3.x), so teams could see exactly what was changing and where their existing implementations
+          needed to update.</p>
       </div>
 
       <figure class="cs-figure">
@@ -136,32 +159,47 @@
       </figure>
 
       <div class="cs-body">
-        <p>Beyond the documentation, I updated the agency's Section 508 accessibility guidance to WCAG 2.2 AA,
-          publishing it in both the Design System and on Confluence. I re-established the cross-agency FPAC UX Sync
-          group, engaging design and development teams across NRCS, FSA, Farmers.gov, and RMA to drive adoption. I also
-          built the case for enterprise Figma adoption across FPAC, researching costs and documenting use cases across
-          mission areas.</p>
+        <p>Beyond the documentation site, I worked to build the organizational infrastructure that a design system needs
+          to survive:</p>
+        <ul>
+          <li><strong>Accessibility</strong> — updated the agency's Section 508 guidance to WCAG 2.2 AA, publishing it in both the Design System and on Confluence</li>
+          <li><strong>Cross-agency adoption</strong> — re-established the FPAC UX Sync group, engaging design teams across NRCS, FSA, Farmers.gov (RMA didn't have any designers)</li>
+          <li><strong>Tooling</strong> — built the business case for enterprise Figma adoption with Figma Make, Figma MCP Server, and Figma Code Connect to accelerate development across FPAC, researching costs and documenting use cases across mission areas</li>
+        </ul>
       </div>
 
       <figure class="cs-figure">
         <img src="civic-design-system/style-guide.png"
           alt="Screenshot of style guide page showing design tokens and utilities">
-        <figcaption>Design tokens and utilities consolidated into a single browsable style guide, organized for quick
-          developer reference.</figcaption>
+        <figcaption>Design tokens and utilities consolidated into a single browsable style guide, organized for quick developer reference.</figcaption>
       </figure>
     </section>
 
-    <!-- Reflection -->
+<!-- Adoption -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">Reflection</h2>
+      <h2 class="cs-section-heading">Adoption</h2>
       <div class="cs-body">
-        <p>A design system's documentation is the product for most of its users. You can build the most elegant token
-          system in the world, but if a developer can't find what they need in under 30 seconds, it doesn't matter. I
-          also learned that adoption can't be driven from one direction alone — it requires working bottom-up through
-          developers, top-down through leadership, and middle-out through technical architects simultaneously.</p>
-        <p>After the contract ended, I forked the design system as the Civic Design System — an open-source resource for
-          federal agencies and civic organizations to use as a starting point for their own USWDS-based design systems.
-        </p>
+        <p>Once the system was built, I worked every adoption lever I had: presented to a DevOps group of 100+ developers
+          and asked for pilot volunteers, wrote leadership requesting a team be assigned to pilot the transition, and
+          promoted the new system through an internal blog on Confluence. Developers validated the work — but no one was
+          going to take on extra effort without leadership making it a priority, and that mandate never came.</p>
+        <p>After the contract ended, I forked the work as the Civic Design System — an open-source resource that any
+          federal agency or non-profit can adopt and customize with their own design tokens in minutes.</p>
+      </div>
+    </section>    
+
+<!-- What I Learned -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">What I Learned</h2>
+      <div class="cs-body">
+        <p>Despite the adoption gap, this project transformed my capabilities. Building a 107-page documentation site
+          from scratch taught me to code at a level I hadn't worked at before, and doing it alongside AI tools like
+          Copilot taught me how to design in code with AI as a collaborator — a workflow that now powers everything I
+          build, from this portfolio to Bantr to my other projects.</p>
+        <p>I also believe the strategy was sound given more time. With the design system in place and AI-assisted
+          development, updating applications to the new architecture would have been straightforward — agency by agency,
+          app by app, building organic relationships with development teams rather than waiting for a leadership mandate
+          that was never going to come. The pieces were all there. The timeline just wasn't.</p>
       </div>
     </section>
 

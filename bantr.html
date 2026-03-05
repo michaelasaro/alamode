@@ -54,14 +54,15 @@
 
   <main id="main-content" class="case-study">
 
+
     <!-- Summary Bar -->
     <header class="cs-header">
       <h1 class="cs-title">Bantr</h1>
-      <p class="cs-subtitle">EdTech Product — AI-Augmented Video Learning Tool</p>
+      <p class="cs-subtitle">EdTech Product — AI Learning Companion</p>
       <div class="cs-meta">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-value">Designer &amp; Developer</span>
+          <span class="cs-meta-value">Founder, Designer &amp; Developer</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
@@ -76,11 +77,7 @@
           <span class="cs-meta-value">Flask, Python, yt-dlp, HTML/CSS/JavaScript, Railway</span>
         </div>
       </div>
-      <div class="cs-header-links">
-        <a href="https://Bantr.up.railway.app/" class="cs-live-link" target="_blank" rel="noopener">Try the App →<span class="sr-only"> (opens in new tab)</span></a>
-        <a href="https://github.com/michaelasaro/Bantr" class="cs-live-link" target="_blank" rel="noopener">GitHub
-          →<span class="sr-only"> (opens in new tab)</span></a>
-      </div>
+      <a href="https://Bantr.up.railway.app/" class="cs-live-link" target="_blank" rel="noopener">Try the App →<span class="sr-only"> (opens in new tab)</span></a>
     </header>
 
     <!-- Hero Image -->
@@ -88,25 +85,49 @@
       <img src="bantr/thumbnail.png" alt="Screenshot of the Bantr educational application">
     </div>
 
-    <!-- The Problem -->
+    <!-- Why This Exists -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Problem</h2>
+      <h2 class="cs-section-heading">Why This Exists</h2>
       <div class="cs-body">
-        <p>YouTube is one of the richest educational resources available, but there's no easy way to bring a video's
-          content into an AI conversation. If you want to discuss a lecture with Claude or ChatGPT, you have to manually
-          copy the URL, find the transcript, grab the metadata, and paste it all together. That friction means most
-          people just don't do it — they watch passively instead of engaging with the material.</p>
+        <p>Before I was a designer, I was a physics teacher. Before that, a materials science engineer. In every role
+          I kept seeing the same thing — structural problems that no single discipline could fix alone.
+          Designers diagnose problems but rarely have the authority to implement the solutions. Engineers build solutions but
+          get handed specs, not problems.</p>
+      
+        <p>What I took from teaching was more personal: I loved watching kids engage with material they were genuinely curious
+          about, and I hated watching that curiosity get ground down by a system designed for compliance. I wanted to design for
+          curiosity rather than compliance — but that's hard to do from inside a system that measures attendance and test scores.</p>
+      
+        <p>Bantr is what happens when the engineering skills, the design skills, and the experience working as a
+          teacher all exist within one person. I can stop trying to fix the system from inside and start building something
+          from outside it.</p>
+
+        <p>The industrial school system was designed to produce outputs: papers, tests, performance. When you give kids
+          AI in a system that asks for outputs, they use it to produce outputs. Cognitive offloading. Who can blame them?
+          But what about an "unschool" where kids could learn, guided by both their interests and adults that want to see them
+          succeed.</p>
+      
+        <p>Bantr bets on a different model. If you meet kids where their curiosity already lives — YouTube, TikTok,
+          the things they're already watching — and give them an AI companion that takes their questions seriously, they
+          use AI for cognitive <em>scaffolding</em>, not offloading. They use it to think more, not less.</p>
+      
+        <p>The feeling it's going for: like going to the library to study with a friend. You didn't necessarily want to
+          study. But at least you got to hang out with your friend, and somehow two hours passed and you actually learned
+          something and it didn't feel like punishment. The companion isn't a tutor above you. It's a friend who showed
+          up first and saved you a seat.</p>
       </div>
     </section>
 
-    <!-- The Approach -->
+    <!-- The Product -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">The Approach</h2>
+      <h2 class="cs-section-heading">The Product</h2>
       <div class="cs-body">
-        <p>I designed and built Bantr as a context preparation layer for AI-powered tutoring. The user pastes a
-          YouTube URL, the app extracts the video's transcript, metadata, timestamps, and description, then packages it
-          as a structured initialization message the user copies into their AI of choice. It's AI-agnostic by design —
-          the user brings their own AI, which keeps the tool free and avoids locking anyone into a single platform.</p>
+        <p>Bantr is a free learning companion that sits alongside YouTube and helps you go deeper into any video through
+          conversation with AI. You find a video, bring it into Bantr, and banter about it — with an AI that's already
+          there, already interested in what you're interested in.</p>
+        <p>The current version is a web app. You paste a YouTube URL, Bantr pulls the transcript, metadata, and
+          timestamps, then packages it as a structured initialization message you can paste into any AI — Claude,
+          ChatGPT, Gemini, whatever you already use. No subscription. No account required. Bring your own AI.</p>
       </div>
 
       <figure class="cs-figure">
@@ -114,15 +135,30 @@
           alt="Screenshot of the initial red version showing URL bar, checkboxes, and copy button">
         <figcaption>The initial design assumed users already understood the "bring your own AI" workflow.</figcaption>
       </figure>
+    </section>
 
+    <!-- The Intervention -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">The Intervention</h2>
       <div class="cs-body">
-        <p>I deployed the first version to Railway and ran a usability test with a user who was comfortable with YouTube
-          but had no prior experience with AI tools. The test revealed a fundamental onboarding problem: the user opened
-          the app and had no idea what to do. They didn't understand that Bantr was a preparation tool, not the AI
-          itself. They couldn't identify the workflow steps or figure out what to do with the initialization message
-          once it was generated.</p>
+        <p>I deployed the first version and ran a usability test with a user who was comfortable with YouTube but had
+          no prior experience with AI tools. The test revealed a fundamental onboarding problem: the user opened the app
+          and had no idea what to do. They didn't understand that Bantr was a preparation tool, not the AI itself. They
+          couldn't identify the workflow steps or figure out what to do with the initialization message once it was
+          generated.</p>
         <p>The core issue wasn't a UI polish problem — it was a missing mental model. The app assumed a workflow that
           didn't exist in the user's head.</p>
+        <p>I redesigned the onboarding into four explicit numbered steps:</p>
+        <ul>
+          <li><strong>Find a video</strong> — paste a URL, or open YouTube to browse</li>
+          <li><strong>Choose your context</strong> — select what to include in the initialization message</li>
+          <li><strong>Pick your AI</strong> — Claude, ChatGPT, Gemini, or Copilot, opened alongside in a new tab</li>
+          <li><strong>Copy the message</strong> — paste it into your AI and start the conversation</li>
+        </ul>
+        <p>The app also accounts for different screen setups. On a large screen, users can place Bantr side-by-side with
+          their AI and use the 'Copy context' button to pass timestamped video context mid-conversation. On mobile or
+          single-screen setups, a built-in notebook lets users jot timestamped notes and questions while watching, then
+          export them as markdown.</p>
       </div>
 
       <figure class="cs-figure">
@@ -131,30 +167,29 @@
         <figcaption>The redesigned onboarding walks users through the workflow step by step: find a video, choose your
           context, pick your AI, and copy the message.</figcaption>
       </figure>
+    </section>
 
+    <!-- Where It's Going -->
+    <section class="cs-section">
+      <h2 class="cs-section-heading">Where It's Going</h2>
       <div class="cs-body">
-        <p>I redesigned the onboarding into four explicit numbered steps: find a video and paste its URL, choose what
-          context to include in the initialization message, optionally open your preferred AI in a new tab, and copy the
-          message. I added an "Open YouTube" button for users who hadn't found a video yet, and radio buttons for
-          selecting an AI (Claude, ChatGPT, Gemini, Copilot) so the app could open it alongside — turning a two-window
-          juggling act into a guided flow.</p>
-        <p>The app also accounts for different screen setups. On a large screen, users can place Bantr side-by-side with
-          their AI and use the 'Copy context' button to pass timestamped video context mid-conversation. On mobile or
-          single-screen setups, a built-in notebook lets users jot timestamped notes and questions while watching, then export
-          them as markdown. A 'How are you working?' question in the setup flow guides users to the right tool for their
-          situation.</p>
+        <p>The web app validated the core idea — kids engage more deeply with video content when they can have a
+          conversation about it — but it also confirmed that a side-app doesn't work. Asking users to copy-paste
+          between windows is too much friction, especially for a 10-14 year old. The AI needs to be inside the
+          experience, not alongside it.</p>
+        <p>The next version is a Chrome extension with a built-in AI API — one click to "Bantr about it" while
+          watching YouTube, no window-switching, no setup. From there, Bantr becomes a learning companion that grows
+          with a child over time — adapting to how they think, remembering what they've explored, and eventually
+          connecting across video, books, primary sources, and articles.</p>
       </div>
     </section>
 
-    <!-- Reflection -->
+    <!-- Try It -->
     <section class="cs-section">
-      <h2 class="cs-section-heading">Reflection</h2>
+      <h2 class="cs-section-heading">Try It</h2>
       <div class="cs-body">
-        <p>Bantr is about a week old and still a work in progress, but it points toward what I think AI's role in education
-          should be. Rather than students using AI to generate answers, the opportunity is to help them more deeply engage with
-          content they're already intrinsically motivated to watch. A student who chooses a YouTube lecture on quantum mechanics
-          is already curious — the right tool gives them a way to interrogate that content, ask follow-up questions, and build
-          understanding at their own pace.</p>
+        <p>Bantr is free and open source. Find a YouTube video you're curious about and
+          <a href="https://Bantr.up.railway.app/" target="_blank" rel="noopener">start a conversation</a>.</p>
       </div>
     </section>
 
