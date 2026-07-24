@@ -534,13 +534,25 @@ button:focus-visible {
 .resume-list {
   list-style: disc;
   padding-left: 1.25em;
+  margin: 0;
 }
 
 .resume-list li {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
-  line-height: 1.65;
-  margin-bottom: 0.25em;
+  line-height: 1.55;
+  margin-bottom: 0.2em;
+}
+
+.resume-sub-list {
+  list-style: circle;
+  padding-left: 1.1em;
+  margin: 0.2em 0 0;
+}
+
+.resume-sub-list li {
+  font-size: 0.8rem;
+  margin-bottom: 0.12em;
 }
 
 .resume-clearance {
@@ -593,13 +605,13 @@ button:focus-visible {
   }
 
   .resume-section {
-    margin-bottom: 12pt;
+    margin-bottom: 8pt;
   }
 
   .resume-section-title {
-    font-size: 12.5pt;
-    margin-bottom: 7pt;
-    padding-bottom: 3pt;
+    font-size: 12.2pt;
+    margin-bottom: 5pt;
+    padding-bottom: 2pt;
     color: var(--color-accent-hover) !important;
     border-bottom-color: var(--color-accent-hover) !important;
   }
@@ -623,7 +635,7 @@ button:focus-visible {
   }
 
   .resume-entry {
-    margin-bottom: 10pt;
+    margin-bottom: 9pt;
     page-break-inside: avoid;
   }
 
@@ -645,9 +657,18 @@ button:focus-visible {
   }
 
   .resume-list li {
-    font-size: 9.5pt;
-    line-height: 1.4;
-    margin-bottom: 1.5pt;
+    font-size: 9pt;
+    line-height: 1.35;
+    margin-bottom: 1pt;
+  }
+
+  .resume-sub-list {
+    padding-left: 0.95em;
+  }
+
+  .resume-sub-list li {
+    font-size: 8.5pt;
+    margin-bottom: 0.75pt;
   }
 
   .resume-clearance {
