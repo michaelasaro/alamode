@@ -573,9 +573,16 @@ button:focus-visible {
     box-shadow: none !important;
   }
 
+  html,
+  body {
+    font-size: 10.5pt;
+  }
+
   body {
     font-size: 10.5pt;
     line-height: 1.4;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
   }
 
   .site-nav,
@@ -664,6 +671,11 @@ button:focus-visible {
 
   .resume-sub-list {
     padding-left: 0.95em;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.4in;
   }
 
   .resume-sub-list li {
