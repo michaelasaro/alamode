@@ -526,8 +526,7 @@ button:focus-visible {
 }
 
 .resume-meta {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+    font-size: 0.95rem;
   white-space: nowrap;
 }
 
@@ -538,7 +537,7 @@ button:focus-visible {
 }
 
 .resume-list li {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--color-text-muted);
   line-height: 1.55;
   margin-bottom: 0.2em;
@@ -551,12 +550,12 @@ button:focus-visible {
 }
 
 .resume-sub-list li {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-bottom: 0.12em;
 }
 
 .resume-clearance {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--color-text-muted);
 }
 
